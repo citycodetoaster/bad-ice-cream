@@ -22,42 +22,10 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(ptsd)
 
-file(GLOB_RECURSE SRC_FILES src/*.cpp)
-file(GLOB_RECURSE HEADER_FILES include/*.hpp)
+file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS src/*.cpp)
+file(GLOB_RECURSE HEADER_FILES CONFIGURE_DEPENDS include/*.hpp)
 
 add_executable(${PROJECT_NAME} ${SRC_FILES} ${HEADER_FILES}
-        include/MainCharacter.hpp
-        include/Enemies.hpp
-        include/Wall.hpp
-        include/Ice.hpp
-        src/MainCharacter.cpp
-        src/Ice.cpp
-        src/Enemies.cpp
-        include/Floor.hpp
-        src/Floor.cpp
-        include/BackGround.hPP
-        src/BackGround.cpp
-        include/Button.hpp
-        src/Button.cpp
-        include/Fruit.hpp
-        include/Namespace_Model.hpp
-        src/Fruit.cpp
-        include/Picture.hpp
-        src/Picture.cpp
-        src/Wall.cpp
-        include/BGM.hpp
-        include/Text.hpp
-        src/AutoMove.cpp
-        src/NameSpace_Model.cpp
-        src/FruitUpdate.cpp
-        src/PhaseChange.cpp
-        src/TurnOnLV.cpp
-        src/CharacterUpdate.cpp
-        include/CampFire.hpp
-        src/CampFire.cpp
-        include/Block.hpp
-        src/Block.cpp
-        src/TurnOffThings.cpp
         Resources/Nothing_Important.cpp
 )
 
