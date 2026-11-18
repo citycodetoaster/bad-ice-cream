@@ -5,7 +5,7 @@
 
 #include "Entity/MovableObject.hpp"
 
-// 主角與敵人（電器）的共同基底。在 Map 上以 'E' 佔位。
+// 主角與敵人（電器）的共同基底。在 Map 上以 Cell::Enemy 佔位。
 class Character : public MovableObject {
 public:
     explicit Character(const std::string& ImagePath);
@@ -14,8 +14,8 @@ public:
     bool TowardHasThings(int NewI, int NewJ) const override;
 
 protected:
-    std::vector<std::string>& OccupancyMap() const override { return Map; }
-    char OccupancyMark() const override { return 'E'; }
+    Layer OccupancyLayer() const override { return Layer::Main; }
+    Cell OccupancyMark() const override { return Cell::Enemy; }
     void OnArrive() override { MainCharacterPosition = {i, j}; }
 };
 

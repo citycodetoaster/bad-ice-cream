@@ -59,13 +59,13 @@ void App::MapUpdate() //冰塊物件的偵測
             {
                 if (m_Ice[(i-1)+(j-1)*10]->isCreate()==true)
                 {
-                    Map[i][j]='I';
+                    GameMap::Instance().Set(Layer::Main, i, j, Cell::Ice);
                 }
                 else
                 {
-                    if (Map[i][j]=='I')
+                    if (GameMap::Instance().Is(Layer::Main, i, j, Cell::Ice))
                     {
-                        Map[i][j]='.';
+                        GameMap::Instance().Set(Layer::Main, i, j, Cell::Empty);
                     }
                 }
             }
@@ -509,8 +509,7 @@ void App::FruitUpdate()
             {
                 fruit->SetVisible(false);
                 fruit->SetInGame(false);
-                Map3[fruit->GetI()-1][fruit->GetJ()-1]='.';
-
+                GameMap::Instance().Set(Layer::Fruit, fruit->GetI(), fruit->GetJ(), Cell::Empty);
             }
             if (fruit->GetModel()!=Model::Move::Dont_Move&&fruit->GetVisibility())//冰淇淋移動判定
             {
@@ -687,7 +686,7 @@ void App::BlockUpdate()
             continue;
         }
         Block->TimeUpdate(m_Ice[Block->GetIndex()]->GetVisibility());
-        if (Block->ChangeIce()&&Map[Block->GetI()][Block->GetJ()]=='.')//冷卻時間到，且沒有其他物件，就製作冰塊
+        if (Block->ChangeIce()&&GameMap::Instance().Is(Layer::Main, Block->GetI(), Block->GetJ(), Cell::Empty))//冷卻時間到，且沒有其他物件，就製作冰塊
         {
             m_Ice[Block->GetIndex()]->SetVisible(true);
         }
@@ -733,14 +732,14 @@ void App::MapStart()
         {
             if (wall->GetVisibility())
             {
-                Map[wall->GetI()][wall->GetJ()]='#';
+                GameMap::Instance().Set(Layer::Main, wall->GetI(), wall->GetJ(), Cell::Wall);
             }
         }
         for (const auto& wall : m_AirWall)
         {
             if (wall->GetVisibility())
             {
-                Map2[wall->GetI()][wall->GetJ()]='A';
+                GameMap::Instance().Set(Layer::Air, wall->GetI(), wall->GetJ(), Cell::AirWall);
             }
         }
 
@@ -749,14 +748,14 @@ void App::MapStart()
     {
         if (enemy->GetVisibility())
         {
-            Map[enemy->GetI()][enemy->GetJ()]='E';
+            GameMap::Instance().Set(Layer::Main, enemy->GetI(), enemy->GetJ(), Cell::Enemy);
         }
     }
     for (auto& fruit:m_Fruit)
     {
         if (fruit->GetVisibility())
         {
-            Map3[fruit->GetI()][fruit->GetJ()]='F';
+            GameMap::Instance().Set(Layer::Fruit, fruit->GetI(), fruit->GetJ(), Cell::Fruit);
         }
     }
 }

@@ -4,6 +4,7 @@
 #include <string>
 
 #include "Util/GameObject.hpp"
+#include "Model/GameMap.hpp"
 #include "Model/Namespace_Model.hpp"
 
 // 放在 10x10 格子地圖上的物件：負責圖片與格子座標 (i, j)，不含任何移動行為。

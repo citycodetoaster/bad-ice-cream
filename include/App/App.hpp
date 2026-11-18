@@ -16,6 +16,7 @@
 #include "Audio/BGM.hpp"
 #include "Map/CampFire.hpp"
 #include "Map/Block.hpp"
+#include "Model/GameMap.hpp"
 #include "Model/Namespace_Model.hpp"
 #include <chrono>
 

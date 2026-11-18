@@ -7,51 +7,7 @@
 inline void App::LVReset()
 {
     {
-        Map={
-            "############",//0
-            "#..........#",//1
-            "#..........#",//2
-            "#..........#",//3
-            "#..........#",//4
-            "#..........#",//5
-            "#..........#",//6
-            "#..........#",//8
-            "#..........#",//8
-            "#..........#",//9
-            "#..........#",//10
-            "############"//11
-            // "012345678901"
-        };
-        Map2={
-            "############",//0
-            "#..........#",//1
-            "#..........#",//2
-            "#..........#",//3
-            "#..........#",//4
-            "#..........#",//5
-            "#..........#",//6
-            "#..........#",//8
-            "#..........#",//8
-            "#..........#",//9
-            "#..........#",//10
-            "############"//11
-            // "012345678901"
-        };
-        Map3 = {
-            "############",//0
-            "#..........#",//1
-            "#..........#",//2
-            "#..........#",//3
-            "#..........#",//4
-            "#..........#",//5
-            "#..........#",//6
-            "#..........#",//8
-            "#..........#",//8
-            "#..........#",//9
-            "#..........#",//10
-            "############"//11
-            // "012345678901"
-        };
+        GameMap::Instance().Reset();
     }//Map
     for (auto& enemy:m_Enemies )
     {
@@ -518,7 +474,7 @@ if (!LV_Change&&IsGaming())
                 }
             }
             m_IceCream->SetPosition(1,1);
-            Map[m_IceCream->GetI()][m_IceCream->GetJ()]='!';
+            GameMap::Instance().Set(Layer::Main, m_IceCream->GetI(), m_IceCream->GetJ(), Cell::Player);
             break;
         }
     case Phase::LV14:
@@ -543,7 +499,7 @@ if (!LV_Change&&IsGaming())
                 }
             }
             m_IceCream->SetPosition(1,1);
-            Map[m_IceCream->GetI()][m_IceCream->GetJ()]='!';
+            GameMap::Instance().Set(Layer::Main, m_IceCream->GetI(), m_IceCream->GetJ(), Cell::Player);
             break;
         }
     case Phase::LV15:
@@ -571,7 +527,7 @@ if (!LV_Change&&IsGaming())
                 }
             }
             m_IceCream->SetPosition(1,1);
-            Map[m_IceCream->GetI()][m_IceCream->GetJ()]='!';
+            GameMap::Instance().Set(Layer::Main, m_IceCream->GetI(), m_IceCream->GetJ(), Cell::Player);
             break;
 
         }

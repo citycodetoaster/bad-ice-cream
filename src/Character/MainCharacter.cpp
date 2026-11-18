@@ -23,20 +23,20 @@ void MainCharacter::UpdateMovement(std::vector<Util::Keycode> keyOrder){
     switch (keyOrder.front()) {
     case Util::Keycode::W:
     case Util::Keycode::UP:
-        this->MoveUp();Map[NextI][NextJ]='!';Map[i][j]='.';
+        this->MoveUp();GameMap::Instance().Set(Layer::Main, NextI, NextJ, Cell::Player);GameMap::Instance().Set(Layer::Main, i, j, Cell::Empty);
         break;
     case Util::Keycode::S:
     case Util::Keycode::DOWN:
-        this->MoveDown();Map[NextI][NextJ]='!';Map[i][j]='.';
+        this->MoveDown();GameMap::Instance().Set(Layer::Main, NextI, NextJ, Cell::Player);GameMap::Instance().Set(Layer::Main, i, j, Cell::Empty);
         break;
 
     case Util::Keycode::A:
     case Util::Keycode::LEFT:
-        this->MoveLeft();Map[NextI][NextJ]='!';Map[i][j]='.';
+        this->MoveLeft();GameMap::Instance().Set(Layer::Main, NextI, NextJ, Cell::Player);GameMap::Instance().Set(Layer::Main, i, j, Cell::Empty);
         break;
     case Util::Keycode::D:
     case Util::Keycode::RIGHT:
-        this->MoveRight();Map[NextI][NextJ]='!';Map[i][j]='.';
+        this->MoveRight();GameMap::Instance().Set(Layer::Main, NextI, NextJ, Cell::Player);GameMap::Instance().Set(Layer::Main, i, j, Cell::Empty);
         break;
     default:
         return;
@@ -45,7 +45,7 @@ void MainCharacter::UpdateMovement(std::vector<Util::Keycode> keyOrder){
 
 bool MainCharacter::TowardHasThings(int const NewI, int const NewJ) const
 {
-    if (Map[NewI][NewJ] == 'I'||Map[NewI][NewJ] == '#'||Map2[NewI][NewJ] == 'A')
+    if (GameMap::Instance().Is(Layer::Main, NewI, NewJ, Cell::Ice)||GameMap::Instance().Is(Layer::Main, NewI, NewJ, Cell::Wall)||GameMap::Instance().Is(Layer::Air, NewI, NewJ, Cell::AirWall))
     {
         return true;
     }
@@ -54,7 +54,7 @@ bool MainCharacter::TowardHasThings(int const NewI, int const NewJ) const
 
 bool MainCharacter::IsitIce(int NewI, int NewJ)
 {
-    if (Map[NewI][NewJ] == 'I')
+    if (GameMap::Instance().Is(Layer::Main, NewI, NewJ, Cell::Ice))
     {
         return true;
     }

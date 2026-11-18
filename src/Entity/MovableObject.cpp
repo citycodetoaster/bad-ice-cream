@@ -10,16 +10,17 @@ void MovableObject::SetPosition(int const newI, int const newJ)
 void MovableObject::MoveTo(int const targetI, int const targetJ, Model::Direction const direction)
 {
     SetDirection(direction);
-    auto& map = OccupancyMap();
+    auto& map = GameMap::Instance();
+    Layer const layer = OccupancyLayer();
     if (!TowardHasThings(targetI, targetJ)) {
         NextI = targetI;
         NextJ = targetJ;
-        map[NextI][NextJ] = OccupancyMark();
-        map[i][j] = '.';
+        map.Set(layer, NextI, NextJ, OccupancyMark());
+        map.Clear(layer, i, j);
     } else {
         NextI = i;
         NextJ = j;
-        map[NextI][NextJ] = OccupancyMark();
+        map.Set(layer, NextI, NextJ, OccupancyMark());
     }
 }
 

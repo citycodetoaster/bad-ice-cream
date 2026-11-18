@@ -9,5 +9,5 @@ void Fruit::MoveTowards()
 
 bool Fruit::TowardHasThings(int const NewI, int const NewJ) const
 {
-    return Map[NewI][NewJ] == '#' || Map[NewI][NewJ] == 'I' || Map3[NewI][NewJ] == 'F';
+    return GameMap::Instance().Is(Layer::Main, NewI, NewJ, Cell::Wall) || GameMap::Instance().Is(Layer::Main, NewI, NewJ, Cell::Ice) || GameMap::Instance().Is(Layer::Fruit, NewI, NewJ, Cell::Fruit);
 }

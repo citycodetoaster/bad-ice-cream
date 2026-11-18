@@ -25,8 +25,8 @@ void Enemies::MoveTowards(){
 
 bool Enemies::TowardHasThings(int const NewI, int const NewJ) const
 {
-    char const c = Map[NewI][NewJ];
-    return c == '#' || c == 'I' || c == 'E';
+    Cell const c = GameMap::Instance().Get(Layer::Main, NewI, NewJ);
+    return c == Cell::Wall || c == Cell::Ice || c == Cell::Enemy;
 }
 
 bool Enemies::fired()
@@ -49,7 +49,7 @@ bool Enemies::fired()
 
     if (TowardHasThings(GetDirection()))
     {
-        if (TowardIs(GetDirection())!='I')
+        if (TowardIs(GetDirection())!=Cell::Ice)
         {
             return false;
         }
@@ -68,7 +68,7 @@ bool Enemies::fired()
     return false;
 
 }
-char Enemies::TowardIs(Model::Direction NewDirection) const
+Cell Enemies::TowardIs(Model::Direction NewDirection) const
 {
     switch (NewDirection)
     {
@@ -81,7 +81,7 @@ char Enemies::TowardIs(Model::Direction NewDirection) const
     case Model::Direction::Right:
         return TowardIs(i+1, j);
     default:
-        return '.';
+        return Cell::Empty;
     }
 }
 void Enemies::ChangeImage(int a)//圖片變更功能，生火的變化圖

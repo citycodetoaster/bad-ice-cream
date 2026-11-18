@@ -16,7 +16,7 @@ bool Ice::isCreate() const
 
 bool Ice::HasThings(int const NewI, int const NewJ)
 {
-    if (Map[NewI][NewJ] == '#'||Map[NewI][NewJ] == 'E'||Map2[NewI][NewJ] == 'A')
+    if (GameMap::Instance().Is(Layer::Main, NewI, NewJ, Cell::Wall)||GameMap::Instance().Is(Layer::Main, NewI, NewJ, Cell::Enemy)||GameMap::Instance().Is(Layer::Air, NewI, NewJ, Cell::AirWall))
     {
         return true;
     }

@@ -34,11 +34,11 @@ public:
         lastTime=std::chrono::steady_clock::now();
     }
 
-    char TowardIs(int I,int J) const
+    Cell TowardIs(int I,int J) const
     {
-        return Map[I][J];
+        return GameMap::Instance().Get(Layer::Main, I, J);
     }
-    char TowardIs(Model::Direction NewDirection) const;
+    Cell TowardIs(Model::Direction NewDirection) const;
 
     void ChangeImage(int a);
 protected:

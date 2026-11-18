@@ -10,7 +10,7 @@
 // 會在格子間移動的物件（角色、水果的共同基底）。
 // 移動流程只寫在這裡；子類別只需要回答三件事：
 //   1. TowardHasThings：這格能不能走
-//   2. OccupancyMap / OccupancyMark：自己在哪張地圖上用什麼符號佔位
+//   2. OccupancyLayer / OccupancyMark：自己在地圖哪一層、用什麼內容佔位
 //   3. SlideSpeed / OnArrive：滑動速度與抵達後的額外動作
 class MovableObject : public GridObject {
 public:
@@ -53,8 +53,8 @@ protected:
     // 依 Model::Move 的規則漫遊：走到頭就隨機換方向。
     void Wander(Model::Move moveModel);
 
-    virtual std::vector<std::string>& OccupancyMap() const = 0;
-    virtual char OccupancyMark() const = 0;
+    virtual Layer OccupancyLayer() const = 0; // 自己在哪一層佔位
+    virtual Cell OccupancyMark() const = 0;   // 佔位時寫入的內容
     virtual float SlideSpeed() const { return 0.2f; }
     virtual void OnArrive() {}
 
