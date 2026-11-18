@@ -8,6 +8,7 @@
 #include "spdlog/spdlog.h"
 #include "Util/GameObject.hpp"
 #include "Util/Color.hpp"
+#include <iostream>
 #include "Util/Text.hpp"
 
 class Text :public Util::GameObject

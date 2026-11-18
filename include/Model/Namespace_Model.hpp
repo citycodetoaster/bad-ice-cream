@@ -104,6 +104,7 @@ namespace Model {
     std::string DirToStr(Model::Direction dir);
     int DirToNum(Model::Direction dir);
     glm::vec2 DirToPos(Model::Direction dir);
+    Direction RandomDirection(Move moveModel); //依移動方式隨機挑一個方向
 }
 
 

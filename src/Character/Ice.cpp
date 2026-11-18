@@ -4,7 +4,7 @@
 
 #include "Character/Ice.hpp"
 
-Ice::Ice(const std::string& ImagePath): Character(ImagePath)
+Ice::Ice(const std::string& ImagePath): GridObject(ImagePath)
 {
 
 }

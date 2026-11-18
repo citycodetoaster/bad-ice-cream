@@ -14,15 +14,12 @@ public:
     explicit Enemies(const std::string& ImagePath, Model::Move ModelMove,Model::Fired Fired=Model::Fired::None);
 
     void MoveTowards();
-    void MoveDirection();
-    Model::Direction GetRandomDirection();
-    bool TowardHasThings(int NewI, int NewJ) override;
-    bool TowardHasThings(Model::Direction NewDirection) override;
+    Model::Direction GetRandomDirection() const { return Model::RandomDirection(ModelMove); }
+    using MovableObject::TowardHasThings;
+    bool TowardHasThings(int NewI, int NewJ) const override;
 
     void SetModel(Model::Move NewModel){ModelMove=NewModel;}
-    Model::Move GetModel(){return ModelMove;}
-
-    void UpdatePosition() override;
+    Model::Move GetModel() const {return ModelMove;}
 
     //廢案
     // Model::Direction AutoMove(glm::vec2 MainPosition);
@@ -37,13 +34,17 @@ public:
         lastTime=std::chrono::steady_clock::now();
     }
 
-    char TowardIs(int I,int J)
+    char TowardIs(int I,int J) const
     {
         return Map[I][J];
     }
-    char TowardIs(Model::Direction NewDirection);
+    char TowardIs(Model::Direction NewDirection) const;
 
     void ChangeImage(int a);
+protected:
+    float SlideSpeed() const override { return 0.1f; }
+    void OnArrive() override {}
+
 private:
     std::chrono::steady_clock::time_point lastTime;  // 記錄上次創建冰的時間
     const std::chrono::milliseconds cooldownTime{2000};

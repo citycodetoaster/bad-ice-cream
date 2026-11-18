@@ -3,20 +3,16 @@
 
 #include <string>
 
-#include "Util/GameObject.hpp"
-#include "Map/Wall.hpp"
-#include "Character/Character.hpp"
+#include "Entity/GridObject.hpp"
 
-class Ice : public Character {
+// 冰塊：固定在格子上的物件，不會移動。
+class Ice : public GridObject {
 public:
     explicit Ice(const std::string& ImagePath);
 
     bool isCreate() const;
 
     static bool HasThings(int NewI, int NewJ);
-private:
-    std::string m_ImagePath;
-
 };
 
 #endif //ICE_HPP

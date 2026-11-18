@@ -8,6 +8,7 @@
 #include "Character/Enemies.hpp"
 #include "Character/Ice.hpp"
 #include "Map/Floor.hpp"
+#include "Map/Wall.hpp"
 #include "UI/Button.hpp"
 #include "Character/Fruit.hpp"
 #include "UI/Picture.hpp"

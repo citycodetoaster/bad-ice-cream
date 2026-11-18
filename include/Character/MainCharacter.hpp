@@ -14,7 +14,8 @@ public:
 
     void UpdateMovement(std::vector<Util::Keycode> keyOrder);
 
-    bool TowardHasThings(int NewI, int NewJ) override;
+    using MovableObject::TowardHasThings;
+    bool TowardHasThings(int NewI, int NewJ) const override;
 
     virtual bool IsitIce(int NewI, int NewJ);
 private:
