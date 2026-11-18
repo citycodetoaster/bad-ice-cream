@@ -124,6 +124,8 @@ void App::EnemiesUpdate()
                                         }
                                         break;
                                     }
+                                case Model::Direction::None:
+                                    break;
                             }
 
                             break;
@@ -235,6 +237,8 @@ void App::EnemiesUpdate()
                                     }
                                     break;
                                 }
+                                case Model::Direction::None:
+                                    break;
                             }
 
                             break;

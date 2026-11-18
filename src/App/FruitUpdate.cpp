@@ -7,7 +7,7 @@ void App::FruitCounter()
 {
     int counter=0;
     int sum=0;
-    for (int a=0; a<m_Fruit.size(); a++)
+    for (int a=0; a<static_cast<int>(m_Fruit.size()); a++)
     {
         if (m_Fruit[a]->InGame())
         {
@@ -104,7 +104,7 @@ void App::FruitCounter()
     }
     if (!IsGaming())
     {
-        for (int a=0; a<m_FruitPicture.size(); a++)
+        for (int a=0; a<static_cast<int>(m_FruitPicture.size()); a++)
         {
             m_Texts[a]->SetVisible(false);
             m_FruitPicture[a]->SetVisible(false);

@@ -130,7 +130,7 @@ private:
     std::vector<std::shared_ptr<Floor>> m_Arrow_Right;
     std::vector<std::shared_ptr<Floor>> m_Arrow_Down;
 
-    int m_CurrentBGMIndex = 0;
+    size_t m_CurrentBGMIndex = 0;
     std::vector<std::shared_ptr<BackGround>> m_BackGround;
     std::vector<std::shared_ptr<BGM>> m_BGM;
 
