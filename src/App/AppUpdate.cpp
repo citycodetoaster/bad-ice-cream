@@ -6,7 +6,7 @@ void App::Update() {
 
     m_LVLockedPicture[0]->Unlock();
 
-    TurnOnInterface();//InterFace轉換判定跟初始化
+    TurnOnInterface();//Interface轉換判定跟初始化
     TurnOnLV();//初始化關卡
 
     FruitCounter();

@@ -91,7 +91,7 @@ private:
 
     enum class Phase {
         Start=70,
-        Manu=80,
+        Menu=80,
         Help=90,
         //Pause,
         LV01=1,LV02,LV03,LV04,LV05,

@@ -12,7 +12,7 @@ class Picture : public Util::GameObject {
 public:
 
 
-    explicit Picture(const std::string& ImagePath, const Model::PicureSource Model);
+    explicit Picture(const std::string& ImagePath, const Model::PictureSource Model);
 
     Picture(const Picture&) = delete;
 
@@ -51,7 +51,7 @@ private:
 
     std::string m_ImagePath;
 
-    Model::PicureSource m_Source;
+    Model::PictureSource m_Source;
 
     bool Locked=true;
 };

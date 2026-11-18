@@ -36,7 +36,7 @@ namespace Model {
         Right=3,
         None=-1 //預設
     };
-    enum class PicureSource //設置位置時的參考參數
+    enum class PictureSource //設置位置時的參考參數
     {
         Fruit, //水果圖片
         Locked,//鎖定圖片

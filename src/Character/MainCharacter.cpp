@@ -52,7 +52,7 @@ bool MainCharacter::TowardHasThings(int const NewI, int const NewJ) const
     return false;
 }
 
-bool MainCharacter::IsitIce(int NewI, int NewJ)
+bool MainCharacter::IsItIce(int NewI, int NewJ)
 {
     if (GameMap::Instance().Is(Layer::Main, NewI, NewJ, Cell::Ice))
     {

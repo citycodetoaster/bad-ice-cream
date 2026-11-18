@@ -18,7 +18,7 @@ void App::TurnOffLevel()
             Fruit->SetInGame(false);
             Fruit->SetDirection(Model::Direction::None);
         }
-    }//Charcter
+    }//Character
     {
         for (const auto& Ice : m_Ice) {
             Ice->SetVisible(false);

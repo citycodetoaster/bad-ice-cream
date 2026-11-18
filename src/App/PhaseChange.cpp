@@ -15,7 +15,7 @@ void App::TurnOnInterface()
         switch (m_Phase){
             case Phase::Start:{
                 m_BackGround[1]->SetVisible(true);//title
-                m_Button[0]->SetVisible(true);//Manu
+                m_Button[0]->SetVisible(true);//Menu
                 m_Button[1]->SetVisible(true);//Help
 
                 if (Util::Input::IsKeyPressed(Util::Keycode::MOUSE_LB)&&now - lastMouseTime >= cooldownTime)
@@ -25,7 +25,7 @@ void App::TurnOnInterface()
                         lastMouseTime = now;
                         m_BackGround[1]->SetVisible(false);//title
                         TurnOffButton();
-                        m_Phase=Phase::Manu;
+                        m_Phase=Phase::Menu;
                         m_LastPhase=Phase::Start;
                     }
                     else if (m_Button[1]->isClicked(mousePosition))
@@ -62,7 +62,7 @@ void App::TurnOnInterface()
                 }
                 break;
             }
-            case Phase::Manu:
+            case Phase::Menu:
             {
                 m_BackGround[3]->SetVisible(true);//Interface_None
                 m_Button[2]->SetVisible(true);//Back
@@ -99,7 +99,7 @@ void App::TurnOnInterface()
                         TurnOffButton();
                         TurnOffLevelButton();
                         m_Phase=Phase::Start;
-                        m_LastPhase=Phase::Manu;
+                        m_LastPhase=Phase::Menu;
                     }
                     for (int a=0;a<25;a++)
                     {
@@ -118,7 +118,7 @@ void App::TurnOnInterface()
                                 TurnOffButton();
                                 TurnOffLevelButton();
                                 m_Phase= static_cast<Phase>(static_cast<int>(Phase::LV01) + a);
-                                m_LastPhase=Phase::Manu;
+                                m_LastPhase=Phase::Menu;
                                 break;
                             }
                         }
@@ -141,7 +141,7 @@ void App::TurnOnInterface()
                         lastMouseTime = now;
                         m_BackGround[4]->SetVisible(false);
                         TurnOffButton();
-                        m_Phase=Phase::Manu;
+                        m_Phase=Phase::Menu;
                         m_LastPhase=Phase::Win;
                         m_Texts[9]->SetVisible(false);
                     }
@@ -187,7 +187,7 @@ void App::TurnOnInterface()
                         lastMouseTime = now;
                         m_BackGround[5]->SetVisible(false);
                         TurnOffButton();
-                        m_Phase=Phase::Manu;
+                        m_Phase=Phase::Menu;
                         m_LastPhase=Phase::Lose;
                         m_Texts[9]->SetVisible(false);
                     }
@@ -264,7 +264,7 @@ void App::InterfaceChangeFromLV()
             lastMouseTime = now;
             TurnOffButton();
             m_LastPhase=m_Phase;
-            m_Phase=Phase::Manu;
+            m_Phase=Phase::Menu;
             LV_Change=false;
             TurnOffLevel();
         }

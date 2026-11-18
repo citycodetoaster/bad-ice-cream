@@ -17,7 +17,7 @@ public:
     using MovableObject::TowardHasThings;
     bool TowardHasThings(int NewI, int NewJ) const override;
 
-    virtual bool IsitIce(int NewI, int NewJ);
+    virtual bool IsItIce(int NewI, int NewJ);
 private:
 
 };

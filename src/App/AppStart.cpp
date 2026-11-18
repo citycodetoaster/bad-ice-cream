@@ -81,7 +81,7 @@ void App::Start()
         m_Button[3]->SetVisible(false);
         m_Root.AddChild(m_Button[3]);
 
-        m_Button.push_back(std::make_shared<Button>(GA_RESOURCE_DIR"/Image/Background/Button/Circle_REPLAY.png",Model::ButtonStyle::Circle60));
+        m_Button.push_back(std::make_shared<Button>(GA_RESOURCE_DIR"/Image/Background/Button/Circle_Replay.png",Model::ButtonStyle::Circle60));
         m_Button[4]->BackGround::SetPosition({210,330});
         m_Button[4]->SetZIndex(100);
         m_Button[4]->SetVisible(false);
@@ -315,55 +315,55 @@ void App::Start()
 
     {
 
-        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/Lemon.png",Model::PicureSource::Fruit));
+        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/Lemon.png",Model::PictureSource::Fruit));
         m_FruitPicture[0]->SetZIndex(90);
         m_FruitPicture[0]->SetVisibility(false);
         m_FruitPicture[0]->SetPosition(1);
         m_Root.AddChild(m_FruitPicture[0]);
 
-        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/櫻桃.png",Model::PicureSource::Fruit));
+        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/櫻桃.png",Model::PictureSource::Fruit));
         m_FruitPicture[1]->SetZIndex(90);
         m_FruitPicture[1]->SetVisibility(false);
         m_FruitPicture[1]->SetPosition(2);
         m_Root.AddChild(m_FruitPicture[1]);
 
-        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/水蜜桃.png",Model::PicureSource::Fruit));
+        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/水蜜桃.png",Model::PictureSource::Fruit));
         m_FruitPicture[2]->SetZIndex(5);
         m_FruitPicture[2]->SetVisibility(false);
         m_FruitPicture[2]->SetPosition(3);
         m_Root.AddChild(m_FruitPicture[2]);
 
-        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/火龍果.png",Model::PicureSource::Fruit));
+        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/火龍果.png",Model::PictureSource::Fruit));
         m_FruitPicture[3]->SetZIndex(5);
         m_FruitPicture[3]->SetVisibility(false);
         m_FruitPicture[3]->SetPosition(4);
         m_Root.AddChild(m_FruitPicture[3]);
 
-        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/草莓.png",Model::PicureSource::Fruit));
+        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/草莓.png",Model::PictureSource::Fruit));
         m_FruitPicture[4]->SetZIndex(5);
         m_FruitPicture[4]->SetVisibility(false);
         m_FruitPicture[4]->SetPosition(5);
         m_Root.AddChild(m_FruitPicture[4]);
 
-        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/葡萄.png",Model::PicureSource::Fruit));
+        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/葡萄.png",Model::PictureSource::Fruit));
         m_FruitPicture[5]->SetZIndex(5);
         m_FruitPicture[5]->SetVisibility(false);
         m_FruitPicture[5]->SetPosition(6);
         m_Root.AddChild(m_FruitPicture[5]);
 
-        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/西洋梨.png",Model::PicureSource::Fruit));
+        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/西洋梨.png",Model::PictureSource::Fruit));
         m_FruitPicture[6]->SetZIndex(5);
         m_FruitPicture[6]->SetVisibility(false);
         m_FruitPicture[6]->SetPosition(7);
         m_Root.AddChild(m_FruitPicture[6]);
 
-        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/西瓜.png",Model::PicureSource::Fruit));
+        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/西瓜.png",Model::PictureSource::Fruit));
         m_FruitPicture[7]->SetZIndex(5);
         m_FruitPicture[7]->SetVisibility(false);
         m_FruitPicture[7]->SetPosition(8);
         m_Root.AddChild(m_FruitPicture[7]);
 
-        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/香蕉.png",Model::PicureSource::Fruit));
+        m_FruitPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Character/Fruit/香蕉.png",Model::PictureSource::Fruit));
         m_FruitPicture[8]->SetZIndex(5);
         m_FruitPicture[8]->SetVisibility(false);
         m_FruitPicture[8]->SetPosition(9);
@@ -371,7 +371,7 @@ void App::Start()
 
         for (int a=0;a<50;a++)
         {
-            m_LVLockedPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Background/Level/NEW/LOCK.png",Model::PicureSource::Locked));
+            m_LVLockedPicture.push_back(std::make_shared<Picture>(GA_RESOURCE_DIR"/Image/Background/Level/NEW/Lock.png",Model::PictureSource::Locked));
             m_LVLockedPicture[a]->SetZIndex(65);
             m_LVLockedPicture[a]->SetPosition(a%5, a/5);
             m_LVLockedPicture[a]->SetVisible(false);
@@ -438,7 +438,7 @@ void App::Start()
             m_FireBlock[a]->SetPosition(a%10+1, a/10+1);//a=(X-1)+(Y-1)*10
             m_FireBlock[a]->SetVisible(false);
             m_Root.AddChild(m_FireBlock[a]);
-            m_Fire.push_back(std::make_shared<Block>(GA_RESOURCE_DIR"/Image/Background/block/fire.png",Model::Block::Melt));
+            m_Fire.push_back(std::make_shared<Block>(GA_RESOURCE_DIR"/Image/Background/block/Fire.png",Model::Block::Melt));
             m_Fire[a]->SetZIndex(6);
             m_Fire[a]->SetPosition(a%10+1, a/10+1);//a=(X-1)+(Y-1)*10
             m_Fire[a]->SetVisible(false);

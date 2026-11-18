@@ -3,7 +3,7 @@
 //
 #include "UI/Picture.hpp"
 #include "Util/Image.hpp"
-Picture::Picture(const std::string& ImagePath, Model::PicureSource Model){
+Picture::Picture(const std::string& ImagePath, Model::PictureSource Model){
     SetImage(ImagePath);
     m_Source=Model;
 
@@ -22,7 +22,7 @@ void Picture::SetVisibility(const bool newVisibility)
 
 void Picture::SetPosition(const int newI, const int newJ)
 {
-    if (m_Source==Model::PicureSource::Locked)
+    if (m_Source==Model::PictureSource::Locked)
     {
         auto const NewPosition = glm::vec2(newI*110-220,newJ*-90+180+50);
         SetPosition(NewPosition);
